@@ -114,6 +114,8 @@ Riemman映射定理：
 + 单位圆到单位圆的单射在某一点处导数取得极大值等价于单射是满射，从而如果双射存在其一定也是导数的最值解。实际的构造是通过平方根来给出一个“更大的解”
 + 极限点的单射性质通过零点数目边界表示（Rouche定理）给出
 
+傅里叶变换：
+
 ### 经典复函数（S.L CA）
 
 Elliptic Functions：以一个平面中的平行四边形（基本平行四边形）作为周期区域的亚纯函数。根据Liouville定理，这样的整函数是常值函数。由于周期性的存在，这样的函数在基本平行四边形内部的留数为0。
@@ -206,7 +208,7 @@ $\Gamma$函数:
   \sum_{n=1}^\infin \frac{1}{n^s} - \int_1^\infin \frac{1}{x^s}dx = 
   \int_1^\infin \frac{1}{n^s} -  \frac{1}{x^s}dx
   $$
-  积分项在[n, n+1]中的值被$\frac{1}{n^{Re (s)}}$控制住
+  积分项在[n, n+1]中的值被$\frac{1}{n^{Re (s) + 1}}$控制住
 
 + 定义$\phi(x) = \sum_{p \le x} log \ p$ ，$\Phi(s) = \sum_p \frac{log \ p}{p^s}$ ，立刻可以得到$\Phi$在Re(s) > 1的区域是收敛的 （log的增长总是非常慢的）。$\Phi$和$\phi$的关系为$\Phi(s) = s \int_1^\infin \frac{\phi(x)}{x^{s + 1}}dx$（本质上是积分次序的交换，对同一个log p，计算其从哪个x起才开始产生作用）
 
@@ -220,7 +222,25 @@ $\Gamma$函数:
   \Phi(s + 2ib) + \Phi(s -2ib) + 4\Phi(s + ib) + 4\Phi(s - ib) + 6\Phi(s)\\
   =\sum_p \frac{\log p}{p^{2s}}(p^{ib / 2} + p^{-ib/2})^4 \ge 0
   $$
-  如果$\Phi$在1+ib处有m阶零点，则上式中取s = 1 + $\epsilon$ ,两边同乘$\epsilon$ 并令$\epsilon \rarr 0$，，结合$\Phi$的零点共轭且共轭零点阶数相等，得到-2n  - 8m + 6 $\ge$ 0，n是另外的非负整数，故m = 0
+  如果$\Phi$在1+ib处有m阶零点，则上式中取s = 1 + $\epsilon$ ,两边同乘$\epsilon$ 并令$\epsilon \rarr 0$，，结合$\Phi$的零点共轭且共轭零点阶数相等，得到-2n  - 8m + 6 $\ge$ 0，n是另外的非负整数，故m = 0。所以$\Phi$可以延拓到直线Re(s) > 0.5上
+
++ $\phi(x)$的增长被$x$所控制住
+  $$
+  2^{2n} = (1 + 1)^{2n} = \sum_jC_{2n}^j \ge C_{2n}^n \ge \prod_{n < p \le2n}p = e^{\phi(2n) - \phi(n)}
+  $$
+  从而$\phi(2n) - \phi(n) \le (2 \log 2) n$，从而$\phi(x)$是x的“同阶无穷大”。
+
++ （用傅里叶变换的边界性质来推断原函数性质）主引理：定义在正实轴的f有界且分段连续，g(z)是f的全纯傅里叶变换（Laplace变换），如果g可以全纯延拓到Re(z) >= 0上，则f在0到正无穷积分存在且等于g(0)。（__傅里叶变换后的函数和原先的函数在性质上有很多关联，比如Plancherel定理以及Paley-Wiener定理__）。
+
+  通过主引理可以证明：$\int_1^\infin \frac{\phi(x) -x}{x^2}dx$是收敛的。用$e^t$替换x，对新的积分项应用主引理，同时借助上面的$\Phi$和$\phi$的积分关系得到g的关于$\Phi$的表达，这个表示是可以全纯延拓到虚轴上的。
+
+  进一步，有$\lim_{x\rarr\infin}\phi(x) /x = 1$。如果对某个$\lambda > 1$和x>0有$\phi(x) > \lambda x$，考虑$\int_x^{\lambda x}\frac{\phi(t) - t}{t^2}dt$，这个值与x的选取无关，而由上面的收敛性可知在x趋于无穷时应该为0。故只有有界的x能满足$\phi(x) > \lambda x$。对$\lambda <1, \phi(x) < \lambda x$同理。
+
++ 素数定理：令$\pi(x)$表示不大于x的素数的个数，则$\pi(x)$ ~ $\frac{x}{\log x}$ 。一方面有$\phi(x) \le \pi(x)\log x$，另一方面有
+  $$
+  \phi(x) \ge \sum_{x^{1-\epsilon} \le p \le x} \log p \ge \log x^{1-\epsilon}(\pi(x) - O(x^{1-\epsilon}))
+  $$
+
 
 有限阶整函数：
 
@@ -231,7 +251,7 @@ $\Gamma$函数:
 $$
 \prod E_k(\frac{z}{z_n}) = \prod (1-\frac{z}{z_n})exp\{\frac{z}{z_n} +  \frac{1}{2}(\frac{z}{z_n})^2 + \frac{1}{3}(\frac{z}{z_n})^3 + ... \frac{1}{k-1}(\frac{z}{z_n})^{k-1} \}
 $$
-+ 上面的$E_k$是Weierstrass乘积中的基本因子，具有性质$|1-E_k(z)| < |z|^k$（注意到$\frac{1-E_k(z)}{z^k}$在0点处是可去奇点，在z=1处取得极大值，因为幂级数展开的所有系数都是正的，这一点通过求$E_k​$的导数就可以得到）
++ 上面的$E_k$是Weierstrass乘积中的基本因子，具有性质$|1-E_k(z)| < |z|^k$（注意到$\frac{1-E_k(z)}{z^k}$在0点处是可去奇点，在z=1处取得极大值，因为幂级数展开的所有系数都是正的，这一点通过求$E_k$的导数就可以得到）
 
 + 可以找到C>0 s.t. $|E_k(z)| \le C^{|z|^{\rho + \epsilon}}$总成立（在远离原点的地方自然成立，在靠近原点的地方，注意到$|E_k| \le 1 +|z|^k$）
 
