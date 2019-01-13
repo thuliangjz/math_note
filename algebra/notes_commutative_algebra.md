@@ -2,11 +2,11 @@
 
 + 后文提到的环如果没有特殊声明都按照交换环考虑
 + 环上的代数：R是一个交换环，R上的一个交换代数由一个交换环S和一个R$\rarr$S的环同态$\alpha$构成，对$r \in R, s \in S$，一般用rs代替$\alpha(r)s$。假设代数S是由一系列生成元构成的集合P中的元素生成，则$S \cong R[P]$
-+ summand: 对于模而言，M是P的一个summand等价于 $\exists \sigma : M \rarr P, \phi : P \rarr M, s.t. \phi \sigma = id$
++ summand: 对于模而言，M是P的一个summand等价于 $\exists \sigma : M \rarr P, \phi : P \rarr M, s.t. \phi \sigma = id​$
 
-### Chp1
+### Hilbert基定理
 
-Hilbert基定理：一个Noetherian环关于有限个变元的多项式环仍然是Noetherian环。
+一个Noetherian环关于有限个变元的多项式环仍然是Noetherian环。
 
 + 注意对于一个环R而言，有$(R[x])[y] \cong R[x, y]$，从而只要证明R[x]是Noetherian的即可。
 
@@ -18,14 +18,16 @@ Hilbert基定理：一个Noetherian环关于有限个变元的多项式环仍然
 + 对于一维情形，注意到将R看作模时子模实际上就是理想，任意由一个生成元生成的R的模都是R看作模的商模。
 + 对于二维情形，设M由$b_1$和$b_2$生成，考虑商映射$\phi_1: M \rarr M/(Rb_2)$，后一个模由$\phi_1(b_1)$生成，考虑M的子模N，$\phi_1(N)$是有限生成的，假设其生成元为$\bar{n_1},\bar{n_2}... \bar{n_k}$，其原象为$n_1, n_2 ... n_k$，则N中每个元都和由$n_1, n_2...n_k$生成的模中的某个元相差一个$Rb_2$中的元t，所有这样的t的集合又生成一个$Rb_2$中的子模，从而N是有限生成的。类似地可以证明，如果M0是M的子模，则M Noetherian等价于M0和M/M0 都Noetherian
 
-Invariant Theory：该理论的一个重要问题是研究（关于若干个变元的）多项式环在某个自同构群作用下的不变元的结构：
+### Invariant Theory
+
+该理论的一个重要问题是研究（关于若干个变元的）多项式环在某个自同构群作用下的不变元的结构：
 
 + 给定n个元素的置换群，在该置换群作用下（交换变量的名称）保持形式不变的多项式称为对称多项式，对称多项式都可以用经典的基本多项式进行表达
-+ 给定关于两个变量的n次齐次多项式的一般形式：$f(x,y) = \sum_{k = 0}^na_kx^ky^{n-k}$，对x和y做线性变量替换：$\bar{x} = c_{11} x + c_{12}y, \bar{y} = c_{21}x + c_{22}y$，带入f的表达式，得到$f(\bar{x}, \bar{y}) = \sum_{k = 0}^n \bar{a_k} \bar{x}^k \bar{y}^{n-k}$ 。给定一个关于$A_0, A_1 ... A_n$的多项式$I$, 如果对于任意上面的变换，都有：$I(\bar{a}_0, \bar{a}_1, ... \bar{a}_n) = (c_{11}c_{22} - c_{12}c_{21})^g I(a_0, a_1...a_n)$，则称I是"Invariant of binary forms of degree n"
++ 给定关于两个变量的n次齐次多项式的一般形式：$f(x,y) = \sum_{k = 0}^na_kx^ky^{n-k}​$，对x和y做线性变量替换：$\bar{x} = c_{11} x + c_{12}y, \bar{y} = c_{21}x + c_{22}y​$，带入f的表达式，得到$f(\bar{x}, \bar{y}) = \sum_{k = 0}^n \bar{a_k} \bar{x}^k \bar{y}^{n-k}​$ 。给定一个关于$A_0, A_1 ... A_n​$的多项式$I​$, 如果对于任意上面的变换，都有：$I(\bar{a}_0, \bar{a}_1, ... \bar{a}_n) = (c_{11}c_{22} - c_{12}c_{21})^g I(a_0, a_1...a_n)​$，则称I是"Invariant of binary forms of degree n"
 
 通常情况下，考虑的自同构群可以看做变元构成的线性空间上的线性变换。__Hilbert的basis theorem最早被用来证明所有的不变元构成的子代数是有限生成的。__
 
-Graded ring：
+### Graded ring
 
 + 一个环R看做Abel群时存在一个直和分解：$R = R_0 \bigoplus R_1 \bigoplus R_2 \bigoplus ... $，（所以$R_i$关于加法是封闭的但是乘法未必），同时$R_i R_j \sub R_{i + j}$ (由于对加法是封闭的，只要保证$R_i$中的任意一个元素和$R_j$中任意一个元素相乘结果在$R_{i + j}$中即可)。进一步，直和分解的角标可以拓展到负数（此时称为对$\Z$进行分级），甚至关于任意的幺半群进行分级。最简单的分级环是按照多项式的度数进行分级的环。
 + 从定义立刻可以看到$R_0$是R的一个子环，即使关于任意幺半群进行分级也是一样。
@@ -33,11 +35,11 @@ Graded ring：
 
 Hilbert对于不变环有限生成性质的证明：
 
-+ 存在保持分级的$S \rarr S^G$的映射，该映射还固定$S^G$中的元素。对G是有限群的过程，可以通过取所有映射值平均值的方法得到，如果G是无限群，则要考虑积分
++ 存在保持分级的$S \rarr S^G​$的映射，该映射还固定$S^G​$中的元素。对G是有限群的过程，可以通过取所有映射值平均值的方法得到，如果G是无限群，则要考虑积分
 + 若k为一个域，$S = k[x_1, ..., x_r]$为按度数进行分级的多项式环，R是S的一个k子代数，如果存在一个映射$\phi : S \rarr R$ s.t.保持度数（保持分级）同时保持R中的元素映射到自身（这种情况下称R是S的一个summand），则R是一个有限生成的k子代数。__有限生成代数不同于有限生成理想：__有限生成子代数意味着存在有限个R中的元素r1, ... , rn使得任何一个元素都可以表示成关于这些生成元的__多项式__，以k中的元素作为系数。
 + 设$m \sub R$是其中所有度数大于0的多项式，$mS$是这些多项式在S中生成的理想，根据S的Noetherian性质，$mS$存在有限个生成元$f_1, f_2, ...,f_n$，对任意的度数非0的$f \in R$（根据分级的性质，只要考虑__齐次__的$f$即可），由于$f$在$m$中，存在同样齐次的$g_1, g_2 ... g_n \in S$ s.t. $f = \sum f_ig_i$ ，等式两边同时作用$\phi$，得到：$f = \sum f_i \phi(g_i)$ ，由于__每个g的次数都低于f，从而可以对f的度数进行归纳。__ 
 
-零点定理：
+### 零点定理
 
 + 域k上的n个变元的多项式可以定义$k^n$上的多项式函数，当k为无穷域时，任意一个非0多项式函数都不在$k^n$上恒等于0（借助将变元赋值为常数的specialization的过程以及一元多项式只有有限个根的事实）。当考察其上的多项式函数时，通常将$k^n$称为k上的"仿射n空间"，记做$A^n(k)$或者$A^n$ 。
 
@@ -115,7 +117,7 @@ Hilbert对于不变环有限生成性质的证明：
 
 ### 几何不变论(Geometric Invariant Theory)：
 
-设G为作用在某个集合上的群（这意味着$r(s(x)) = (r s)(x)$）。商空间X/G定义为X在G作用下的轨道的集合，商映射$\pi: X \to X/G$ 将每个X中的元素映射到其轨道。如果X本身具有拓扑结构，则X/G可以赋予商拓扑。即使G的元都可以用多项式进行表示，X/G本身不能被看做一个代数簇使得$\pi$是一个代数簇之间的态射：代数簇需要满足Zariski拓扑，但是$\pi$赋予X/G的商拓扑可能和Zariski拓扑不一致。
+设G为作用在某个集合上的群（这意味着$r(s(x)) = (r s)(x)​$）。商空间X/G定义为X在G作用下的轨道的集合，商映射$\pi: X \to X/G​$ 将每个X中的元素映射到其轨道。如果X本身具有拓扑结构，则X/G可以赋予商拓扑。即使G的元都可以用多项式进行表示，X/G本身不能被看做一个代数簇使得$\pi​$是一个代数簇之间的态射：代数簇需要满足Zariski拓扑，但是$\pi​$赋予X/G的商拓扑可能和Zariski拓扑不一致。
 
 对G的元可以用多项式函数进行表示的情形，G也可以作用于X的坐标环A(X)($g \in G, f \in A(X)$ ，g把f映射到$f \circ g$)。A(X)中那些在G作用下的不变元，就是那些在G的轨道上取定值的元（$f \circ g(x) = f(x), \forall g \in G, x \in X$）。这些f可以定义一个X/G上的函数的环。__如果X/G或者其一个子集可以被看做代数簇，那么__ $A(X)^G$ __应该就是这个代数簇的坐标环 。__
 
@@ -133,7 +135,7 @@ $P^r(k)$ 分解成仿射空间的disjoint union（分离并）：$P^r(k)$ 中第
 
 研究投影代数簇的数值不变量。研究生成一个投影代数集X的理想$I$的次数为d的齐次项张成的向量空间的维数。
 
-分级模：设$R = R_0 \bigoplus R_1 \bigoplus R_2 \bigoplus...$ 为一个分级模，M是一个定义在R上的模，M作为一个阿贝尔群具有直和分解$M = \bigoplus_{-\infin} ^{\infin} M_i$ ，且$\forall i, j, R_i M_j \sub M_{i + j}$ ，则称M是在R上的分级模。如果M是分级模，d为整数，定义M(d)是一个与M同构的模，$M(d)_e = M_{d + e}$
+分级模：设$R = R_0 \bigoplus R_1 \bigoplus R_2 \bigoplus...$ 为一个分级环，M是一个定义在R上的模，M作为一个阿贝尔群具有直和分解$M = \bigoplus_{-\infin} ^{\infin} M_i$ ，且$\forall i, j, R_i M_j \sub M_{i + j}$ ，则称M是在R上的分级模。如果M是分级模，d为整数，定义M(d)是一个与M同构的模，$M(d)_e = M_{d + e}$
 
 Hilbert函数：M为有限生成的$k[x_1, x_2, ...]$ 上的分级模（多项式环按照度数进行分级），定义$H_M(s) = \dim_k M_s$ 为M的Hilbert函数，注意这些维数都是有限的，如果某个$M_s$的Hilbert函数值为0，则子模$\bigoplus_s^{\infin} M_i$ 不是有限生成的。**Hilbert指出**当s很大的时候，$H_M(s)$就是关于s的一个多项式。 
 
@@ -151,7 +153,31 @@ Hilbert函数：M为有限生成的$k[x_1, x_2, ...]$ 上的分级模（多项�
   $$
   H_M(s) - H_M(s - 1) = H_{M/x_rM}(s) - H_K(s - 1)
   $$
-  注意到右侧的两个分级模都是关于$k[x_1, ... x_{r - 1}]$ 的，从而可以利用归纳假设。最后，如果一个关于自然数的函数在自变量比较大时的差分是多项式，那么这个函数本身在自变量比较大的时候也是多项式函数。
+  注意到右侧的两个分级模都是关于$k[x_1, ... x_{r - 1}]​$ 的，从而可以利用归纳假设。最后，如果一个关于自然数的函数在自变量比较大时的差分是多项式，那么这个函数本身在自变量比较大的时候也是多项式函数。
+
+### Free resolution
+
+自由分级R模：R是分级环，定义自由分级R模型是一系列形如R(d)的一维模的直和，直和得到的模的分级与各个一维分量的分级相匹配。
+
+complex of R-module：指一系列R上的模$F_i$和模同态$\phi_i: F_i  \to F_{i-1}$ 满足相邻两个同态的复合是0，即$\phi_{i + 1}$的像是$\phi_i$的核。在该complex上$F_i$处的同调指模$\ker(F_i \to F_{i - 1}) / \text{im}(F_{i + 1} \to F_i)$ 
+
+free resolution: R上的模M的一个free resolution指一个关于一系列自由R模$\{F_i\}$的complex：
+$$
+\mathcal{F}: \cdot\cdot\cdot \to F_n  \xrightarrow{\phi_n} F_{n - 1} \cdot\cdot\cdot 
+\xrightarrow{\phi_1} F_0
+$$
+同时满足$\text{coker}\ \phi_1= F_0 / \text{im}(\phi_1) = M$ 且$\mathcal{F}$是正合序列。有时也将正合序列
+$$
+\mathcal{F}: \cdot\cdot\cdot \to F_n  \xrightarrow{\phi_n} F_{n - 1} \cdot\cdot\cdot 
+\xrightarrow{\phi_1} F_0 \to M \to 0
+$$
+ 称为M的一个resolution。 $\phi_i​$的像称为M的第i个syzygy模。如果R为分级环，$\{F_i\}​$均为分级模，且同态均为__度为0__(i.e.保持元素的分级，在定义域的分级就是在值域的分级,在wikipedia的定义中称为**graded linear map**)的齐次映射，则称$\mathcal{F}​$为graded free resolution。如果有一个n使得$F_{n+1}=0​$但对于0<i<n，$F_i \ne 0​$ 。则称$\mathcal{F}​$的长度为n。
+
+一个构造free resolution的方法：给定R上的一个模M，设M具有生成元$\{\alpha_i \}$ ，构建一个R上的自由模$F_0$ ，其生成元集合和M的生成元集合等势，构造$\phi_0$将$F_0$映射到M，设核为$M_1$，从$M_1$再次执行上面的操作，得到一系列的F。
+
+Hilbert syzygy定理：令$R = k[x_1, ..., x_r]$ ，则每个有限生成的分级的R模存在一个有限长度的graded free resolution，其长度小于r。该resolution中的自由模都是有限生成的。
+
+Hilbert对Hilbert多项式定理的证明：假设R同上，若对某个d有M = R(d)，则$H_{R(d)}(s) = H_R(s + d)$ 。R中次数为s + d的单项式的个数是非负整数不定方程$a_1 + a_2 + ... +a_r = s + d$ 的解的个数。对于M为若干个R(d)的直和的情况，H就是这些R(d)求和。syzygy定理表明对于任意有限生成的分级模，有一个有限长度的graded free resolution    $\mathcal{F}: 0\to F_r \to ...\to F_0 \to M \to 0$ 。M在s分级上的维数是$F_0$在s上的维数减去映到M的核的维数，根据正合性，核的维数恰好是$F_1$映射到$F_0$中的像的维数，再次调用维数公式。所以有$H_M(s) = \sum(-1)^iH_{F_i}(s)$ 从而$H_M$也是多项式。
 
 ### 习题
 

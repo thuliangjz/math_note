@@ -8,6 +8,7 @@
 
 + Real and Complex Analysis（By Walter Rudin）复习时的笔记，比较简单，因为这本书我看了很长时间了，纸质笔记也非常详尽
 + Complex Analysis (By Serge Lang)学习时笔记，相对详细，因为是初次学习，目标在于学习一些相对“具体的”复函数应用
++ Commutative Algebra：交换代数，为代数数论和代数几何打基础，有些概念初看上去不明所以，但却被广泛使用
 
 ## 为什么创立这个仓库？
 
