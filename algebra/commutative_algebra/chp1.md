@@ -2,7 +2,9 @@
 
 + 后文提到的环如果没有特殊声明都按照交换环考虑
 + 环上的代数：R是一个交换环，R上的一个交换代数由一个交换环S和一个R$\rarr$S的环同态$\alpha$构成，对$r \in R, s \in S$，一般用rs代替$\alpha(r)s$。假设代数S是由一系列生成元构成的集合P中的元素生成，则$S \cong R[P]$
-+ summand: 对于模而言，M是P的一个summand等价于 $\exists \sigma : M \rarr P, \phi : P \rarr M, s.t. \phi \sigma = id​$
++ 直和和直积：给定一系列模$\{M_i\}_{i \in I}​$ ，$\Pi M_i​$ 表示形如$(m_i)_{i \in I}​$的tuple的集合。其中$m_i \in M_i​$ ，而$\oplus M_i \sub \Pi M_i​$ 是只有有限个分量不等于0的所有tuple的集合。
++ summand: 对于模而言，M是P的一个summand等价于 $\exists \sigma : M \rarr P, \phi : P \rarr M, s.t. \phi \sigma = id$
++ cokernel：对于模X和Y以及从X到Y上的同态f，coker(f) = Y / im(f)
 
 ### Hilbert基定理
 
