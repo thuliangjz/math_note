@@ -127,3 +127,17 @@ N为M的子模，如果$\text{Ass } (M/N)$只包含一个元素，称N为P-prima
 
   极小性只要注意到$\text{Ass }M[U^{-1}]$中的元和$\{\text{Ass }M[U^{-1}] / M_i[U^{-1}]\}$中的元即$\{P_tR[U^{-1}] \}$一一对应即可
 
+
+
+### primary decomposition与可分解性的关系
+
+以下假定R为Noetherian Domain。$f \in R, f = u \prod p_i^{e_i}  $，其中u为R的可逆元，$p_i$为R中的素元素，$e_i$正整数，则$(f) = \cap (p_i^{e_i})$ 是$(f)$的一个minimal primary decomposition：
+
+给定$Q \in \text{Ass }R / (p_i^{e_i})$，由于Q中包含了$p_i$的幂次且Q素，$Q \supset (p_i)$；另一方面$ \forall q \in Q, \exist f \notin (p_i^{e_i}) \text{ s.t. } \exist g, qf = p_i^{e_i}g$，根据$p_i $的素性质和qf整除$p_i^{e_i}$可知q能够被$p_i$除，从而$Q \sub (p_i)$，这说明$(p_i^{e_i})$是$p_i$-primary的
+
+类似的手法可以证明$p \nmid g \Rightarrow (g )\cap (p_i^{e_i}) = (gp_i^{e_i}) $ ，从而$(f) = \cap (p_i^{e_i})$。minimal性质通过$(p_i)$确实是R/(f)中的某个元的零化子得到。
+
+
+
+如果R是可分解的，给定任何一个主理想$(f)$，包含$(f)$的一个极小素理想P一定是$\text{Ass }R / (f)$中的元素，对f进行因子分解得到$f = u \prod p_i^{e_i}  $，则P一定是某个$p_i$生成的主理想；反过来，如果每一个包含主理想的极小素理想也是主理想，只要检查不可约元素是素元素即可，给定这样的一个不可约元素f，根据Zorn引理，__一定__存在一个包含$(f)$的极小素理想（存在包含$(f)$的极大理想，因而是素理想，嵌套素理想之交仍然是素理想），假设这个理想由$p$生成，则有$h \text{ s.t. }f = ph$，但f不可约，从而h是可逆元，故$(f ) = (p)$
+
