@@ -7,7 +7,7 @@
 第一节介绍的关于$\text{Ass}_R M$的性质中主要涉及以下几个方面：
 
 + $\text{Ass}_R M$的有限性，什么样的素理想一定位于$\text{Ass} M$中（包含M的零化子的极小的P，注意和上一章最后一节关联）
-+ $\text{Ass}_R M$中元素的交由0和所有M的零除数构成。
++ $\text{Ass}_R M$中元素的并由0和所有M的零除数构成。
 + $Ass M$和局部化操作的可交换性质。
 
 
@@ -24,9 +24,9 @@
 
    + $\vec{v}_1$与$\vec{v}_2$不共线。则对任意的$i \in \{1, ... ,n +1\}$，$\vec{v}_1$与$\vec{v}_2$连线上__最多只有一个点__在$V_i$中，无限域的假设说明连线上有无穷个点，从而至少有一个点不在这些子空间中。
 
-2. 对于$\{I_i\}$中至多包含两个非素理想的情形。首先从$\{I_i\}$中剔除那些冗余的集合，使得最后剩下的理想中每一个和$J$的交都包含不在其他任何理想中的元素。即：$\forall i , \exist x_i \in J \cap I_i \text{ s.t. } x_i \notin \bigcap_{k \ne i} I_k $ 。剔除完之后，如果还剩下两个理想，则$x_1 + x_2$在$J - (I_1 \cup I_2)$中。如果剩下多于两个理想，则其中一定存在一个素理想，比如说$I_1$，则$x_1 + \prod_{k \ge 2}x_k $在$J - \cup I_i$中。从证明过程来看，即使只有一个素理想也可以，但是需要额外保证这个集合是经过剔除操作之后的集合。
+2. 对于$\{I_i\}$中至多包含两个非素理想的情形。首先从$\{I_i\}$中剔除那些冗余的集合，使得最后剩下的理想中每一个和$J$的交都包含不在其他任何理想中的元素。即：$\forall i , \exist x_i \in J \cap I_i \text{ s.t. } x_i \notin \bigcup_{k \ne i} I_k $ 。剔除完之后，如果还剩下两个理想，则$x_1 + x_2$在$J - (I_1 \cup I_2)$中。如果剩下多于两个理想，则其中一定存在一个素理想，比如说$I_1$，则$x_1 + \prod_{k \ge 2}x_k $在$J - \cup I_i$中。从证明过程来看，即使只有一个素理想也可以，但是需要额外保证这个集合是经过剔除操作之后的集合。
 
-3. 对于R为分级环且$J$由次数大于零的元素生成且齐次元都位于$\cap I_i$中，$I_i$均为素理想的情形，为了证明$J \sub $某个$I_i $仍然用上面的方法选出齐次的$x_1, x_2, ..., x_n$，则这些元素的次数都大于0，从而存在$d_1, d_2, ..., d_n \text{ s.t. } x_1^{d_1}, x_2^{d_2}, ... ,x_n^{d_n}$的次数都相同。且同样有$\forall i ,  x_i^{d_i} \in J \cap I_i \land x_i^{d_i} \notin \bigcap_{k \ne i} I_k $ 。
+3. 对于R为分级环且$J$由次数大于零的元素生成且齐次元都位于$\cap I_i$中，$I_i$均为素理想的情形，为了证明$J \sub $某个$I_i $仍然用上面的方法选出齐次的$x_1, x_2, ..., x_n$，则这些元素的次数都大于0，从而存在$d_1, d_2, ..., d_n \text{ s.t. } x_1^{d_1}, x_2^{d_2}, ... ,x_n^{d_n}$的次数都相同。且同样有$\forall i ,  x_i^{d_i} \in J \cap I_i \land x_i^{d_i} \notin \bigcup_{k \ne i} I_k $ 。
 
 借助于prime avoidance, 和上面的$\text{Ass }M$的性质，(R和M的定义同上)，如果R中的一个理想只包含M的零除数，则其事实上零化某个元素（包含在$\text{Ass} M$的某个元素中）
 
@@ -68,11 +68,11 @@ $$
 
 
 
-### Primary Decomposition
+## Primary Decomposition
 
 主要任务是将M的子模分解成一系列子模的交
 
-N为M的子模，如果$\text{Ass } (M/N)$只包含一个元素，称N为P-primary。称M为coprimary如果M的associate prime只包含一个元素。有限个P-primary子模的交仍然是P-primary的：如果$\text{Ass }(M / N_1) = \text{Ass }(M / N_2) = \{P\}$，则$\text{Ass }(M / (N_1 \cap N_2)) \sub \text{Ass }(M / (N_1 \oplus N_2))$ ，（前者是后者的子模），根据上一节的结果，$\text{Ass}(M / (N_1 \oplus N_2)) = \text{Ass }(M / N_1) \cup \text{Ass }(M / N_2)$ 。
+N为M的子模，如果$\text{Ass } (M/N)$只包含一个元素，称N为P-primary。称M为coprimary如果M的associate prime只包含一个元素。有限个P-primary子模的交仍然是P-primary的：如果$\text{Ass }(M / N_1) = \text{Ass }(M / N_2) = \{P\}$，则$\text{Ass }(M / (N_1 \cap N_2)) \sub \text{Ass }(M / N_1 \oplus M/ N_2)$ ，（前者是后者的子模），根据上一节的结果，$\text{Ass}(M / N_1 \oplus M / N_2) = \text{Ass }(M / N_1) \cup \text{Ass }(M / N_2)$ 。
 
 
 
@@ -99,11 +99,11 @@ N为M的子模，如果$\text{Ass } (M/N)$只包含一个元素，称N为P-prima
 + 如果该分解是精简的(irredundant)，即$\forall j , \cap_{i \ne j} M_i \ne M' $，此时有
   $$
   \begin{align}
-  \bigcap_{i \ne j} M_i &= (\bigcap_{i \ne j} M_i) / (M_j \cap \bigcap_{i \ne j} M_i) \\
+  (\bigcap_{i \ne j} M_i) / M' &= (\bigcap_{i \ne j} M_i) / (M_j \cap \bigcap_{i \ne j} M_i) \\
   &\cong (\bigcap_{i \ne j} M_i + M_j) / M_j \sub M / M_j
   \end{align}
   $$
-  由于$\text{Ass } M / M_j$只包含一个元素$P_i $而$\bigcap_{i \ne j}M_i$为其子集，从而其associate prime也只包含$P_i $，特别地，$\text{Ass }M$中同样包含$P_i $。这意味着每一个$P_i$都在$\text{Ass }M$中
+  由于$\text{Ass } M / M_j$只包含一个元素$P_i $而$\bigcap_{i \ne j}M_i / M'$为其子集，从而其associate prime也只包含$P_i $，$\bigcap_{i \ne j}M_i / M' \sub M / M'$， 故$\text{Ass }M / M' $中同样包含$P_i $。这意味着每一个$P_i$都在$\text{Ass }M / M' $中
 
 + 如果该分解是极小的(minimal)，任何一个分解的项数都不会小于该分解。两个P-primary的子模之交还是P-primary的，从而这些子模对应的$P_i$应该彼此不同。由于不能从中去掉任意一个元素，从而$\text{Ass M}$与$\{P_i\}$一一对应。
 
@@ -129,7 +129,7 @@ N为M的子模，如果$\text{Ass } (M/N)$只包含一个元素，称N为P-prima
 
 
 
-### primary decomposition与可分解性的关系
+## primary decomposition与可分解性的关系
 
 以下假定R为Noetherian Domain。$f \in R, f = u \prod p_i^{e_i}  $，其中u为R的可逆元，$p_i$为R中的素元素，$e_i$正整数，则$(f) = \cap (p_i^{e_i})$ 是$(f)$的一个minimal primary decomposition：
 
@@ -141,3 +141,71 @@ N为M的子模，如果$\text{Ass } (M/N)$只包含一个元素，称N为P-prima
 
 如果R是可分解的，给定任何一个主理想$(f)$，包含$(f)$的一个极小素理想P一定是$\text{Ass }R / (f)$中的元素，对f进行因子分解得到$f = u \prod p_i^{e_i}  $，则P一定是某个$p_i$生成的主理想；反过来，如果每一个包含主理想的极小素理想也是主理想，只要检查不可约元素是素元素即可，给定这样的一个不可约元素f，根据Zorn引理，__一定__存在一个包含$(f)$的极小素理想（存在包含$(f)$的极大理想，因而是素理想，嵌套素理想之交仍然是素理想），假设这个理想由$p$生成，则有$h \text{ s.t. }f = ph$，但f不可约，从而h是可逆元，故$(f ) = (p)$
 
+
+
+## 分级情况下的primary decomposition
+
+$R = R_0 \oplus R_1 ... $为分级Noetherian环，M为有限生成的分级模（参考第一章Hilbert Function那一节），$P \in R$是某个$m \in M$的零化子，如果P是素理想，则P同时也是齐次理想且为某个齐次元素的零化子：
+
+对m的齐次项个数进行归纳以证明该命题：如果$\text{Ann }m$为素理想，则其为齐次理想。当m本身就是齐次项时，命题成立。
+
+假定命题在个数不大于k-1时成立，$k \ge 2$。给定$f \in P$，只要证明f的__最低次__齐次分量也在P中即可。令$m = \sum_{i = 1}^{k} m_i $，则$f_1 m$的最低次齐次项就是$f_1 m_1$，从而$f_1m = \sum_{i = 2}^k$，其齐次项个数小于k。下面分两种情况讨论来证明$f_1 \in P$：
+
++ $I =\text{Ann }f_1m \ne P $，则P是其__真子集__，从而存在$g \in I - P$使得$gf_1m = 0$，这说明$g f_1 \in P$从而由P素可知$f_1 \in P$
++ 如果$\text{Ann }f_1m = P$，则由于$f_1 m$的项数小于k，且其零化子P为素理想，根据归纳假设，P为齐次理想。
+
+借助于上面的结论，可以得到$\text{Ass M}$中全部都是齐次理想。对primary decompostion一节中不可约分解的证明稍作修改，可以得到任何一个M的子模存在一个齐次primary decompostion：只要证明不可分解齐次子模一定是P-primary的即可。如果不可分解子模M'满足在$M / M' $内部存在两个齐次元素零化子为不同的素理想P和Q，则这两个模在M中的原像仍然是齐次的且包含了M'。（注意分级模关于齐次子模的商模天然是分级模）
+
+
+
+## 从primary decomposition中提取信息
+
+从primary decomposition一节可以知道，如果$0 = \cap_i M_i$是$0 \sub M $的一个primary decomposition，且$M_i$对应的associate prime $P_i$是包含$\text{Ann } M$的极小理想，则$M_i$事实上由R和M唯一确定。以此可以推测__这些__$M_i$能够反应M的结构。
+
+给定$I \sub R$，令
+$$
+H^0_I(M) = \{m \in M | I^n m = 0 \text{ for } n \gg 0 \}
+$$
+注意$H^0_I(M)$事实上只由$\text{rad}(I)$决定。
+
+给定R的一个素理想P，考察$H^0_P(M)_P$，这个$M_P$的子模被$R_P$的极大理想$P_P$的某个幂次归零，从而是有限长的（参看chp2，有限长模的判定）。另一方面，给定$M_P$的一个有限长模，由于$R_P$只有一个极大理想，任何有限长模其一定被$P_P$的幂次归零，从而实际上$H^0_P(M)_P$是$M_P$中最大的有限长模。其长度被称为P在M中的重数。
+
+再令
+$$
+A_I = \{P \in \text{Ass }M | P \supset I \}
+$$
+则$H_I^0(M)$由那些不在$A_I$中的$P_i$所对应的$M_i$相交得到：给定$M' \sub M$，定义$(M':_M I^n) = \{ m\in M | I^nm \in M' \}$，$(M':_M I^\infin) = \cup_n (M':_M I^n)$，则
+$$
+H^0_I(M) = ((\bigcap_i M_i):_M I^\infin) = \bigcap_i(M_i:_M I^\infin)
+$$
+注意到$M / M_i$是$P_i$-coprimary的，即P的某个幂次将$M$中的元素作用到$M_i$中，如果$P_i \supset I$，则$(M_i:_M I^\infin) = M$，如果$P_i \not\supset I$，则$I$中存在$M/M_i$的non-zero divisor，从而$(M_i:_M I^\infin) = M_i$。
+
+由于对于每个$P \in \text{Ass }M - A_I$，$P \not\supset I$，从而利用prime avoidence可以得到存在一个$f \in I, f \notin P\ \forall P\in \text{Ass }M - A_I$，令$N = \ker(M \to M[f^{-1}])$，则$N = (0 :_M f^\infin)$，将上面的$I$用$(f)$取代，可以得到N同样是那些P-primary子模的交。
+
+如果假定$M_i$是0的一个不可约减分解，则有$\text{Ass }M / H_I^0(M) = \text{Ass }M - A $，从而$\text{Ass }H^0_I(M) \sub A$，另一方面，由于每个$H_I^0(M) $中的元素被$I$的幂次作用之后都是0，故$\text{Ass }H^0_I(M)$中的元素包含$I$，从而$\text{Ass }H_I^0(M) = A$。
+
+反过来，如果M的子模N满足$\text{Ass }N = A$且$\text{Ass }M / N = \text{Ass }M - A$，则按照上面的方法找到$f$，可以看到f的幂次零化N中的所有元素，同时是$M / N$的non-zerodivisor，这意味着$N = \ker(M \to M[f^{-1}])$
+
+
+
+## primary decomposition 不是唯一的例子
+
+令$R = k[x]_{(x)}$，注意到由于$x$是$k[x]$中的素元素，从而$(x)$是$k[x]$中的素理想。再令$M = R \oplus R/(x)$，则$\text{Ass}_RM = \text{Ass}_RR \cup \text{Ass}_RR/(x)$ 。注意到R为domain，从而$\text{Ass }R = \{\{0\}\}$，且$\text{Ann }M = \{0\}$。$(x)$仍然为R中的素理想，故$\text{Ass }R/(x) = \{(x)\}$ 。
+
+{0}所对应的M的primary component即M的第二个直和分量$R/(x)$，该分量是唯一的。另一个primary component M'要求$M / M'$中的每个元素的零化子都是$(x)$，一个明显的选择是取第一个M的直和分量。但是仍然存在其他的选择，比如考虑由(1, e)生成的M的子模M'，其中e是第二个直和分量的生成元。$M \to M/M'$中每个M中的元素$u + ve$的像都和$(v-u)e$相同。这意味着第二个直和分量到像集是满射；此外如果$ve \ne 0$，则$ve + R(1, e) \ne R(1, e)$，因为相等则意味着存在$r_1, r_2 \in R$使得$r_1 + r_1e = r_2 + (r_2 + v)e$，直和说明ve = 0矛盾。从而Re到像集也是单射，故$M / M' \cong Re$。这说明(x)所对应的primary component不止一个。
+
+## 习题
+
+给定Noetherian环R和有限生成R模M和N，有
+$$
+\text{Ass Hom}_R(M, N) = \text{Supp }M \cap \text{Ass }N
+$$
+左包含右：如果$P \sub R$某个$\phi \in \text{Hom }_R(M, N)$的零化子，则P一定包含了$\text{Ann }M$以及，令$N' = \text{img }(\phi)$，则$P = \text{Ann }N'$，从而$P \in \text{Ass }N'$。进而$P \in \text{Ass }N$
+
+右包含左：在给定R为Noetherian的情况下，M的有限生成性质意味着M也是有限表示的，从而可以通过证明
+$$
+P_P \in  \text{Supp }M_P \cap \text{Ass }N_P \Rightarrow P_P \in \text{Ass Hom}_{R_P}(M_P, N_P)
+$$
+得到，其中$P \in \text{Supp }M \cap \text{Ass }N $。注意到$P_P \supset \text{Ann } M_P$意味着$M_P / PM_P$是$R_P / P_P$上的模，后者是一个域，从而前者是一个向量空间，进一步存在到$R_P / P_P$上的满射。（需要验证的就是$PM_P \ne M_P$即前者不是零维向量空间，这可以借助nakayama引理），$P_P \in \text{Ass } N_P$说明$R_P / R_P$是$N_P$的一个子空间。从而存在一个将$M_P$映射到$N_P$中的像同构于$R_P / P_P$的同态，其零化子就是$P_P$。这里用到的局部化性质就是$P_P$是$R_P$的唯一的极大理想。
+
+__复习第二章关于分级环的局部化习题__
