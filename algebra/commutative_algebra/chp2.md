@@ -158,7 +158,24 @@ $M \otimes N$中的零元素是值得探讨的，__一般来说，判断两个�
 
 上述性质可以引出对张量积结构的另一种解释：给定$M \otimes N$ ，假设M为映射$\alpha : \oplus _{i \in I} R \to \oplus_{j \in J} R$ 的co-kernel（事实上任何一个模都是自由模除以一个关系子模，而关系子模本身可以看做另一个自由模除以一个子模，即同态下的像）$\alpha$的显式表示是一个矩阵，而$ (\oplus _{i \in I} R) \otimes N \cong \oplus _{i \in I} N$ ，这意味着$M \otimes N $表示成$\alpha \otimes 1$ 的一个co-kernel，这个映射将$(a_1 n, a_2 n, ... a_p n) \mapsto  (a'_1n, a'_2n, ... a'_qn)$  。利用这个方法考察张量积$Z /(m) \otimes  Z/(n)$ 可以看到实际上元素是减少了（同构于$Z / (n) /\ker (\phi) ,$ $\phi$ 将Z/(n)中的元素乘以m）。这个例子说明，两个模的张量积$M \otimes N$ 中的元素$m \otimes n$ 只是__某个自由模关于张量积关系子模的商模中的像__ 。不同的$m \otimes n$ 可能映射到相同的元素。因此，当使用$m \otimes n$定义函数的时候，要保证函数的良定义性质。特别地，如果定义的是一个类似（自）同态的函数，只要保证原先自由模的关系子模在该映射下被映到自身内。
 
-对于一个模是代数的情形，做张量积之后其实就得到了关于该代数的模：如果F为R代数，M为R模，则$F \otimes M$ 是一个F代数，满足$f_2 (f_1 \otimes m) = f_2f_1 \otimes m$ 。__注意验证这个乘法操作的良定义性质__
+对于一个模是代数的情形，做张量积之后其实就得到了关于该代数的模：如果F为R代数，M为R模，则$F \otimes M$ 是一个F代数，满足$f_2 (f_1 \otimes m) = f_2f_1 \otimes m$ 。__注意验证这个乘法操作的良定义性质是不平凡的__：需要证明如果$f_1 \otimes m_1 = f_2 \otimes m_2$，则$f f_1\otimes m_1 = f f_2 \otimes m_2$。可以采用直接证明的方法：如果$f_1 \otimes m_1 = f_2 \otimes m_2$，则存在
+$$
+f_1 \otimes m_1- f_2 \otimes m_2 = \sum r_i
+$$
+其中$r_i$是形如
+$$
+r_i =  (ag + a'g') \otimes (bm + b'm')-  \\ab (g \otimes m) - a'b(g' \otimes m) - ab'(g \otimes m') - a'b'(g' \otimes m')
+$$
+的张量积关系子模中的元素。则
+$$
+\begin{align}
+ff_1 \otimes m_1 - ff_2 \otimes m_2 &= \sum r'_i \\
+&= \sum  f(ag + a'g') \otimes (bm + b'm')-  \\
+&ab (fg \otimes m) - a'b(fg' \otimes m) - \\
+&ab'(fg \otimes m') - a'b'(fg' \otimes m')
+\end{align}
+$$
+任然是0。换言之，乘以f可以和只利用张量积性质的恒等变形交换。恒等变形左侧的所有元乘以f等于右侧的所有元乘以f。为此需要定义好恒等变形的“原子步骤”。
 
 张量积可以将两个代数的性质联系起来：如果A和B都是R上的代数，则$A \otimes B$ 不仅是一个模，还是一个代数：$(a_1 \otimes b_1 ) (a_2 \otimes b_2) = a_1 a_2 \otimes b_1 b_2$ ，利用张量积的万有性质，如果$\alpha, \beta$是A和B到某个代数C的同态，则$\alpha \beta$实现了$A \times B$ 到C上的双线性映射，从而存在从$A \otimes B$ 到C的模同态，将$a \otimes b$ 映射到$\alpha(a) \beta(b)$ ，考虑到$A \otimes B$的环结构，这实际上也是一个代数同态。如果将$k[x] \otimes_k k[x]$ 看做一个代数，则其同构于$k[x, y]$
 
