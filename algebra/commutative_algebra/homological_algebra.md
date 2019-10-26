@@ -291,3 +291,43 @@ $$
 $$
 $\ker \alpha_0$就是那些$x'' = 0$的元，而这要求$\psi_0(x') = 0$即$x' \in \ker \phi_0'$
 
+### 蛇形引理(snake lemma)
+
+$$
+\begin{CD}
+0 @>>> A @>\phi_1>> B @>\phi_2>>C @>>> 0 \\
+@. @V\alpha VV @V\beta VV @V\gamma VV \\
+0 @>>> A' @>\phi_1'>> B' @>\phi_2'>> C' @>>> 0
+\end{CD}
+$$
+上图表格可交换，两个横行为正合序列，则存在一个更长的正合序列：
+$$
+\def \coker{\text{coker }}
+0 \xrightarrow{} \ker \alpha \xrightarrow{f_1} \ker \beta \xrightarrow{f_2} \ker \gamma \xrightarrow{f_3} \coker \alpha \xrightarrow{f_4} \coker \beta \xrightarrow{f_5} \coker \gamma \to 0
+$$
+映射$f_1,f_2$由$\phi_1, \phi_2$诱导，借助表格的交换性即可证明映到相应的模内。$\phi_1$是单射意味着$f_1 $也是单射。
+
+$\ker f_2 = \ker \beta \cap \img \phi_1 \supset \img f_1 $，对每一个$\ker \beta \cap \img \phi_1$中的元素$b$都有一个$a \in A$使得$\phi_1(a) = b$，又$\beta(b) = 0$，从而$\phi_1'\alpha(a) = \beta\phi_1(a) = \beta(b) = 0$，$\phi_1'$的单射性说明$\alpha(a) = 0$，从而$a \in \ker \alpha$,$\img f_1 \supset \ker f_2$，故两者相等。
+
+首先考察$f_3$的存在性。给定$c \in \ker \gamma$，存在一个$b \in B$使得$\phi_2(b) = c$（$\phi_2 $满射）。从而有$\phi_2'\beta(b) = \gamma \phi_2(b) = \gamma(c) = 0$，这说明$\beta(b)\in \ker \phi_2' = \img \phi_1'$，从而存在一个$a \in A$使得$\phi_1'(a) = \beta(b)$。固定这样的c，所有可选的$a_0$应该满足
+$$
+\begin{aligned}
+\phi_1'(a_0) \in \beta(\phi_2^{-1}(c)) \Leftrightarrow \phi_1'(a_0) &\in \beta(b + \img \phi_1)\\
+&=\phi_1'(a) + \img (\beta\phi_1)\\
+&=\phi_1'(a) + \phi_1'(\img \alpha)
+\end{aligned}
+$$
+$\phi_1'$是单射说明$a_0 \in a + \img \alpha$，从而可以定义$\ker \gamma \to \coker \alpha  $。
+
+$\ker f_3$应该包含这样的c使得$c \in \phi_2 \beta^{-1}\phi_1'(\img \alpha) = \phi_2 \beta^{-1}(\img (\beta \phi_1)) = \phi_2(\img \phi_1 + \ker \beta) = \phi_2(\ker \beta) $。从而$\ker f_3 = \img f_2$
+
+$\ker f_4 = (\phi_1'^{-1}(\img \beta) + \img \alpha)/\img \alpha$，由表格的可交换性$\phi_1'(\img \alpha) \sub \img \beta $。从而$\img \alpha \sub \phi_1'^{-1}(\img \beta)$，$\ker f_4 = \phi_1'^{-1}({\img \beta }) / \img \alpha $。另一方面，$\img f_3$对应$A'$中所有满足$\phi_1'(a') = \beta(b), b\in B$的$a'$，$\phi_2$是满射说明$b$可以取遍B中的所有元。从而$\img f_3 = \phi_1'^{-1}(\img \beta) = \ker f_4 $
+$$
+\begin{align}
+\ker f_5 &= (\phi_2'^{-1}(\img \gamma) + \img \beta ) / \img \beta \\
+&=(\phi_2'^{-1}(\img \phi_2'\beta) + \img \beta) / \img \beta\\
+&=(\img \beta + \ker \phi_2' + \img \beta) / \img\beta \\
+&=(\img \beta + \img \phi_1') / \img \beta = \img f_4
+\end{align}
+$$
+$\phi_2'$是满射说明$f_5$也是满射。
