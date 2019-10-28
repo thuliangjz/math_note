@@ -331,3 +331,29 @@ $$
 \end{align}
 $$
 $\phi_2'$是满射说明$f_5$也是满射。
+
+### 5-引理（5-lemma）
+
+给定可交换表格
+$$
+\begin{CD}
+A_1 @>\phi_1>> A_2 @>\phi_2>> A_3 @>\phi_3>> A_4 @>\phi_4>> A_5 \\
+@VV\alpha_1(epi)V @VV\beta_1(iso)V @VV\gamma V @VV\beta_2(iso)V @VV\alpha_2(mono)V \\
+B_1 @>\eta_1>> B_2 @>\eta_2>> B_3 @>\eta_3>> B_4 @>\eta_4>> B_5
+\end{CD}
+$$
+表格的两行均为正合序列，在列映射中，$\alpha_1$为满射，$\alpha_2$为单射，$\beta_1, \beta_2$为同构。则$\gamma$为同构
+
++ $\gamma$为单射：给定$a_3 \in A_3$，若$\gamma(a_3) = 0$，则由交换性有$\phi_3\beta_2(a_3) = 0$，$\beta_2$是同构说明$a_3 \in \ker \phi_3$，行的正合性说明存在$a_2 \in A_2$使得$\phi_2(a_2) = a_3$。令$b_2 = \beta_1(a_2)$，则由交换性$\eta_2(b_2) = \phi_2\gamma(a_2) = 0$，根据行的正合性存在$b_1 \in B_1 \text{ s.t. } \eta_1(b_1) = b_2$。借助$\alpha_1$是满射，存在$a_1\in A_1, \alpha_1(a_1) = b_1$。于是
+  $$
+  \begin{aligned}
+  a_3 &= \phi_2 \beta_1^{-1}\eta_1\alpha_1(a_1)\\
+  &=\phi_2 \phi_1(a_1) = 0
+  \end{aligned}
+  $$
+  第二个等式成立借助的是$\beta_1 \phi_1 = \eta_1 \alpha_1$以及$\beta_1$是同构。
+  
++ $\gamma$为满射：给定$b_3^1 \in B_3$，存在$a_4 \in A_4$使得$\beta_2(a_4) = \eta_3(b_3)$。从而$\alpha_2 \phi_4 (a_4) = \eta_4 \beta_2(a_4) = \eta_4 \eta_3(b_3^1) = 0 $，$\alpha_2$的单射性质说明$a_4 \in \ker \phi_4 = \img \phi_3 $，从而存在$a_3^1 \in A_3 \text{ s.t. }\beta_2\phi_3(a_3^1) = \eta_3(b_3^1)$。
+
+  另一方面对于每一个$\img \eta_2$中的元素，$\beta_1$是同构说明$A_2$通过$\beta_1 \eta_2$映满$\img \eta_2$，从而也通过$\gamma \phi_2$映满。特别地，每个$\img \eta_2 = \ker \eta_3$中的元素都在$A_3$中有对应。令$b_3^2 = b_3^1 - \gamma(a_3^1)$，则$b_3^2 \in \ker \gamma$，从而存在$a_3^2 \in A_3, \gamma(a_3^2) = b_3^2$。故$a_3^1 + a_3^2$即为所求的$b_3^1$的原象。
+
