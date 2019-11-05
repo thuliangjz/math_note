@@ -357,3 +357,80 @@ $$
 
   另一方面对于每一个$\img \eta_2$中的元素，$\beta_1$是同构说明$A_2$通过$\beta_1 \eta_2$映满$\img \eta_2$，从而也通过$\gamma \phi_2$映满。特别地，每个$\img \eta_2 = \ker \eta_3$中的元素都在$A_3$中有对应。令$b_3^2 = b_3^1 - \gamma(a_3^1)$，则$b_3^2 \in \ker \gamma$，从而存在$a_3^2 \in A_3, \gamma(a_3^2) = b_3^2$。故$a_3^1 + a_3^2$即为所求的$b_3^1$的原象。
 
+### 9-引理(9-lemma)
+
+考虑可交换表格
+$$
+\begin{CD}
+@. 0 @. 0 @. 0 \\
+@. @VVV @VVV @VVV\\
+0 @>>> A @>\alpha>> B @>\beta>> C @>>> 0 \\
+@. @VV\phi_AV @VV\phi_BV  @VV\phi_CV \\
+0 @>>> A' @>\alpha'>> B' @>\beta'>> C' @>>> 0 \\
+@. @VV\phi_A'V @VV\phi_B'V @VV\phi_C'V \\
+0 @>>> A'' @>\alpha''>> B'' @>\beta''>> C'' @>>> 0\\
+@. @VVV @VVV @VVV \\
+@. 0 @. 0 @. 0
+\end{CD}
+$$
+表格中所有的列正合，中间行正合，则如果第一行和第三行两个中的某一行正合，另外一行也正合。
+
++ 第一行正合，证第三行正合
+
+  + 证明$\alpha''$为单射可以由下述等价表述
+    $$
+    \begin{align}
+    &\ker \alpha'' = 0  \\
+    \Leftrightarrow &\ker (\alpha''\phi_A')=\img \phi_A \\
+    \Leftrightarrow &\ker (\phi_B' \alpha') = \img \phi_A \\
+    \Leftrightarrow & \alpha'^{-1}(\img \phi_B) = \img \phi_A\\
+    \Leftrightarrow &\img\phi_B \cap \img \alpha' =\alpha'(\img\phi_A)
+    \end{align}
+    $$
+    $\phi_C \beta = \beta' \phi_B$说明两者$\ker$相等，结合$\phi_C, \phi_B$为单射，$\beta, \beta'$为满射可知$\img \alpha = \phi_B^{-1}(\img \alpha')$，两边同时作用$\phi_B$得到$\phi_B(\img \alpha) = \img \alpha' \cap \img \phi_B$，而$\phi_B(\img \alpha) = \alpha'(\img \phi_A)$。
+    
+  + 证明$\ker \beta'' = \img \alpha''$。
+    $$
+    \begin{align}
+    &\ker \beta'' = \img \alpha'' \\
+    \Leftrightarrow &\ker(\beta'' \phi_B') = \phi_B'^{-1}(\img \alpha'') \\
+    \Leftrightarrow &\ker(\phi_C'\beta') = \img \alpha' + \img \phi_B 
+    
+    \end{align}
+    $$
+    第一个等价是由于$\phi_B'$为满射，第二个等价右边的变换考虑到$\phi_A' $为满射以及表格可交换。而
+    $$
+    \ker(\phi_C'\beta') = \beta'^{-1}(\img \phi_C) = \img \phi_B + \ker \beta' = \img\phi_B + \img \alpha'
+    $$
+    
+  + 证明$\beta''$为满射
+  
+    只要注意到$\phi_C'$和$\beta'$均为满射以及$\beta''\phi_B' = \phi_C' \beta'$即可。
+  
++ 第三行正合证明第一行正合。
+
+  + 证明$\alpha$为单射
+
+    $\phi_B$为单射意味着$\ker \alpha = \ker \phi_B \alpha = \ker \alpha' \phi_A = 0$。
+
+  + 证明$\ker \beta = \img \alpha$
+
+    $\phi_C$是单射意味着$\ker \beta = \ker \phi_C \beta = \ker \beta' \phi_B$。
+
+    而$\phi_B$单射说明$\ker \beta'\phi_B = \phi_B^{-1}(\ker \beta') = \phi_B^{-1}(\img \alpha')$。从而
+    $$
+    \begin{align}
+    &\ker\beta = \img \alpha \\
+    \Leftrightarrow& \img \alpha' \cap \img \phi_B = \phi_B(\img \alpha)
+    \end{align}
+    $$
+    而$\ker \phi_B'\alpha' = \ker \alpha'' \phi_A'$说明
+    $$
+    \alpha'^{-1}(\img \alpha' \cap \img \phi_B) = \img \phi_A \\
+    \Rightarrow \img \alpha' \cap \img \phi_B = \alpha'(\img \phi_A) = \phi_B(\img \alpha)
+    $$
+    
+  
+  + 证明$\beta$为满射
+  
+    $\phi_B$与$\phi_C$均为单射，从而$\beta$映满C等价于$\beta' \img \phi_B = \img \phi_C$。作用$\beta'$等价于$\img \phi_B  + \img \alpha'= \beta'^{-1}(\img \phi_C) $。利用$\ker \phi_C'\beta' = \ker \beta''\phi_B'$得到$\beta'^{-1}(\img \phi_C) = \phi_B'^{-1}(\img \alpha'')$。利用$\phi_B'\alpha' = \alpha''\phi_A'$得到$\phi_B'^{-1}(\img \alpha'') = \img \alpha' + \img \phi_B$。
