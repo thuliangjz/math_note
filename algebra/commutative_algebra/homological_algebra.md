@@ -430,7 +430,34 @@ $$
     \Rightarrow \img \alpha' \cap \img \phi_B = \alpha'(\img \phi_A) = \phi_B(\img \alpha)
     $$
     
-  
   + 证明$\beta$为满射
   
     $\phi_B$与$\phi_C$均为单射，从而$\beta$映满C等价于$\beta' \img \phi_B = \img \phi_C$。作用$\beta'$等价于$\img \phi_B  + \img \alpha'= \beta'^{-1}(\img \phi_C) $。利用$\ker \phi_C'\beta' = \ker \beta''\phi_B'$得到$\beta'^{-1}(\img \phi_C) = \phi_B'^{-1}(\img \alpha'')$。利用$\phi_B'\alpha' = \alpha''\phi_A'$得到$\phi_B'^{-1}(\img \alpha'') = \img \alpha' + \img \phi_B$。
+
+__Schanuel引理__ 设有如下的表格
+$$
+\begin{array}5
+0& \to  & N_F & \xrightarrow{\phi_F} & F \\
+&&&&&\searrow \llap\eta_F \\
+\\&&&& \rlap{\hspace{-1.5em} \psi_F \downarrow \uparrow\psi_G} && M &\to& 0 \\
+&&&&&\nearrow \llap\eta_G\\
+0 & \to & N_G & \xrightarrow{\phi_G} & G 
+\end{array}
+$$
+其中$0 \to N_F \to F \to M \to 0$和$0 \to N_G \to G \to M \to 0$都是正合序列。F和G都是投影模，则有$N_F \oplus G \cong  \ker (F \oplus G \to M) \cong N_G \oplus F$。其中$F \oplus G \to M$的映射由$\eta_F + \eta_G$给出。
+
+利用G是投影模，可以得到存在一个$\psi_G$使得$\eta_F \psi_G = \eta_G$。从而
+$$
+\begin{align}
+& \eta_F(f) + \eta_G(g) = 0
+\\ \Rightarrow &\eta_F(f) + \eta_F (\psi_G(g)) = 0
+\\ \Rightarrow  &f + \psi_G(g) \in \img \phi_F
+\end{align}
+$$
+从而可以定义$\ker(F \oplus G \to M) \to N_F \oplus G$的映射$f \oplus g \mapsto (f + \psi_G(g)) \oplus g$。容易验证这是同构。
+
+将$N_F$称为M的一阶syzygy模，不同的一阶syzygy模之间相差一个投影模的直和分量。特别地，这个结论可以说明，如果
+$$
+\mathcal{F}: \ ... \xrightarrow{\phi_{d+1}} F_d \xrightarrow{\phi_d} ... \to F_0 \xrightarrow{\phi_0} M \to 0
+$$
+是M的一个projective resolution，d表示使得$\img \phi_d$为投影模的最小值。则d的选取事实上和resolution本身无关。这实际上是说明在上面的定理中，当$N_F$为投影模的时候，$N_G$也是投影模。这利用投影模是某个自由模的直和分量即可。
