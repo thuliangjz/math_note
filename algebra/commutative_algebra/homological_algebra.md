@@ -461,3 +461,4 @@ $$
 \mathcal{F}: \ ... \xrightarrow{\phi_{d+1}} F_d \xrightarrow{\phi_d} ... \to F_0 \xrightarrow{\phi_0} M \to 0
 $$
 是M的一个projective resolution，d表示使得$\img \phi_d$为投影模的最小值。则d的选取事实上和resolution本身无关。这实际上是说明在上面的定理中，当$N_F$为投影模的时候，$N_G$也是投影模。这利用投影模是某个自由模的直和分量即可。
+
