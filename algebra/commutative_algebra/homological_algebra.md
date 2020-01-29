@@ -25,7 +25,7 @@ $$
 
 研究单形的一个动机是考察环上的线性方程组：映射$\phi_1$将$F_0=R^{n_0}$映射到$F_2 = R^{n_1}$上，R是一个环，其核是$R^{n_1}$的一个子空间，但是通常只知道这个子空间是有限生成的，且任意一组生成元$\{v_1...v_{n_2}\}$一定是线性相关的（这一点与向量空间不同）。这样一来又可以构建一个映射$\phi_2$，其将$R^{n_2}$映射到$\{v_1, ..., v_{n_2}\}$。于是得到正合序列$F_2 \xrightarrow{\phi_2} F_1 \xrightarrow{\phi_1}F_0$，上面这个过程继续下去，就得到一个单形。
 
-这一单形比较特殊的一点在于每个$F_i \in \mathcal{F}$都是自由模，且在每个$F_i$处的同调都是0。这样的单形被称为__free resolution__。如果这样的单形能够终止，则称为__Koszul__单形
+这一单形比较特殊的一点在于每个$F_i \in \mathcal{F}$都是自由模，且在每个$F_i$处的同调都是0。这样的单形被称为__free resolution__。resolution没有在wiki上找到中文的对应，日文被称为"分解"。以下有时也采用这种称呼。如果这样的单形能够终止，则称为__Koszul__单形
 
 ## 自由和投影模
 
@@ -109,7 +109,7 @@ $$
 
 单形映射的同伦等价性：给定$\alpha, \beta: (F, \phi) \to (G, \psi)$为微分模之间的同态映射。如果存在一个$F \to G$的同态$h$使得$\alpha - \beta = \psi h + h \phi$。当F和G是单形的时候还会额外要求$h$的度为1.
 
-立刻得到的结论是$\alpha$与$ \beta$同伦等价当且仅当$\alpha-\beta$和0同伦等价。同伦的另外一个结果是在同调上引导相同的映射。自然只要证明$\alpha$与0同伦的时候$\alpha$将HF映射到0。即将$(F, \phi)$中的环（$\ker \phi$）映射到$(G, \psi)$中的边界（$\text{img }\psi$）。带入$\alpha = \psi h + h \phi$即可。
+立刻得到的结论是$\alpha$与$ \beta$同伦等价当且仅当$\alpha-\beta$和0同伦等价。同伦的另外一个结果是在同调上引导相同的映射。自然只要证明$\alpha$与0同伦的时候$\alpha$将HF映射到0。即将$(F, \phi)$中的圈（$\ker \phi$）映射到$(G, \psi)$中的边界（$\text{img }\psi$）。带入$\alpha = \psi h + h \phi$即可。
 
 （同伦的意义）同调论中常常会将模转换成injective resolution或者projective resolution。模与模之间的映射由单形之间的映射诱导，而同伦的单形映射诱导相同的模同态。令：
 $$
@@ -149,7 +149,7 @@ $$
 
 依此类推可以构建所有的h
 
-利用单形同态诱导模同态的事实可以考察单形之间的等价性：令P和P'是同一个模的__任意__两个projective resolution（resolution意味着序列本身是正合的），则P和P'是同伦等价的，即存在$\alpha: P \to P'$以及$\beta: P' \to P$使得$\alpha \beta$和$\beta \alpha$和单位映射同伦。当给定这样的P和P'和一个模上的可加函子F（即将模映射到模，且保持模的同态的加法的函子，这样的一个函子将0映射到0，从而将单形映射到单形并且保持单形之间的同伦映射），则$H_i(FP)$和$H_i(FP')$同构（$H_i(P)$表示单形P在i处的同调）。这个同构可以通过上面的$\alpha$给出，任何一个和$\alpha$同伦的$\alpha'$在F的映射下和$F \alpha$同伦，从而在同调上诱导相同的映射。关于同构的证明，注意到$F(\alpha) F(\beta) = F(\alpha \beta) \cong F(1)$定义了$FP \to FP$的与单位映射同伦的映射，从而保持同调不变，故$F(\alpha)$诱导的$H_i(F(P))$上的同态是同构。
+利用单形同态诱导模同态的事实可以考察单形之间的等价性：令P和P'是同一个模的__任意__两个投影分解（意味着序列本身是正合的），则P和P'是同伦等价的，即存在$\alpha: P \to P'$以及$\beta: P' \to P$使得$\alpha \beta$和$\beta \alpha$和单位映射同伦。当给定这样的P和P'和一个模上的可加函子F（即将模映射到模，且保持模的同态的加法的函子，这样的一个函子将0映射到0，从而将单形映射到单形并且保持单形之间的同伦映射），则$H_i(FP)$和$H_i(FP')$同构（$H_i(P)$表示单形P在i处的同调）。这个同构可以通过上面的$\alpha$给出，任何一个和$\alpha$同伦的$\alpha'$在F的映射下和$F \alpha$同伦，从而在同调上诱导相同的映射。关于同构的证明，注意到$F(\alpha) F(\beta) = F(\alpha \beta) \cong F(1)$定义了$FP \to FP$的与单位映射同伦的映射，从而保持同调不变，故$F(\alpha)$诱导的$H_i(F(P))$上的同态是同构。
 
 ## 单形的短正合序列
 
@@ -171,7 +171,7 @@ $$
 
 @. @V{\phi'_i}VV @V{\phi_i}VV @V{\phi''_{i}}VV \\
 
-0 @>>> \mlowscript{F_{i}}{(z \in \ker \phi'_{i-1} )}{2.5em} @>{\alpha_{i-1}}>> 
+0 @>>> \mlowscript{F'_{i-1}}{(z \in \ker \phi'_{i-1} )}{2.5em} @>{\alpha_{i-1}}>> 
 \mlowscript{F_{i-1}}{\lower.7em{\overleftarrow{\text{maps to}} \hspace{1em} } (\phi_i(y) \in \alpha_{i-1}(F_{i-1}')) }{3.5em} 
 @>{\beta_{i-1}}>> \mlowscript{F_{i-1}''}{(\beta_{i-1}\phi_i(y) = 0)}{2.2em} @>>> 0 \\
 
@@ -200,17 +200,19 @@ $$
 &\alpha_{i-1}^{-1} \phi_i \beta_i^{-1}(x_0 + \text{img }\phi_{i+1}'') \\
 = &\alpha_{i-1}^{-1}\phi_i(y_0 + \alpha_i(F_i') +  \phi_{i+1}(F_{i+1})) \\
 = &\alpha_{i-1}^{-1}(\alpha_{i-1}(z_0) + \alpha_{i-1}\phi_i'(F_i')) \hspace{2em} * \\
-= & z_0 + \phi_i'(F_i')
+= & z_0 + \img \phi_i'
 \end{align}
 $$
 
 其中*利用了$\phi_i \phi_{i+1} = 0$以及表格的可交换性质。
 
+上面这个式子给出了连接同态$\delta$的显式表示：给定$x \in H_iF'', \delta(x) \bold{= }\alpha_{i-1}^{-1}\phi_i \beta_i^{-1}(x)$。实际上这里并不需要等号成立，只要左边包含右边即可。等号成立提供了一个更强的结论。
+
 
 
 ## 同调的长正合序列
 
-给定单形的短正合序列$0 \to F' \xrightarrow{\alpha} F \xrightarrow{\beta} F'' \to 0$，利用上一届构造出来的$\delta$，可以构造一个同调之间的“长正合序列”：
+给定单形的短正合序列$0 \to F' \xrightarrow{\alpha} F \xrightarrow{\beta} F'' \to 0$，利用上一节构造出来的$\delta$，可以构造一个同调之间的“长正合序列”：
 $$
 ... \to H_i(F') \xrightarrow{H_i(\alpha)} H_i(F) \xrightarrow{H_i( \beta)} H_i(F'') \xrightarrow{\delta_i} H_{i-1}(F') \xrightarrow{H_{i-1}(\alpha)} H_{i-1}(F) \to ...
 $$
@@ -261,7 +263,7 @@ $$
 F' : \dots \to F_i' \xrightarrow{\phi_i'} F_{i-1}' \dots \to F_1' \xrightarrow{\phi_1'} F_0' \\
 F'' : \dots \to F_i'' \xrightarrow{\phi_i''} F_{i-1}'' \dots \to F_1'' \xrightarrow{\phi_1'} F_0'' \\
 $$
-为M'和M''的projective resolution，则存在M的projective resolution $F$，和单形的短正合序列：$0 \to F' \xrightarrow{\alpha'} F \xrightarrow{\alpha} F''\to 0$使得$\beta', \beta$由$\alpha', \alpha$诱导。
+为M'和M''的投影分解，则存在M的投影分解 $F$，和单形的短正合序列：$0 \to F' \xrightarrow{\alpha'} F \xrightarrow{\alpha} F''\to 0$使得$\beta', \beta$由$\alpha', \alpha$诱导。
 $$
 \begin{array}.
 &&&&&& 0\\
@@ -458,7 +460,145 @@ $$
 
 将$N_F$称为M的一阶syzygy模，不同的一阶syzygy模之间相差一个投影模的直和分量。特别地，这个结论可以说明，如果
 $$
-\mathcal{F}: \ ... \xrightarrow{\phi_{d+1}} F_d \xrightarrow{\phi_d} ... \to F_0 \xrightarrow{\phi_0} M \to 0
+\mathcal{F}: \ ... \xrightarrow{\phi_{d+1}} F_d \xrightarrow{\phi_d} ... \xrightarrow{\phi_1} F_0  \to 0
 $$
-是M的一个projective resolution，d表示使得$\img \phi_d$为投影模的最小值。则d的选取事实上和resolution本身无关。这实际上是说明在上面的定理中，当$N_F$为投影模的时候，$N_G$也是投影模。这利用投影模是某个自由模的直和分量即可。
+是M的一个投影分解，d表示使得$\img \phi_d$为投影模的最小值。则d的选取事实上和分解本身无关。这实际上是说明在上面的定理中，当$N_F$为投影模的时候，$N_G$也是投影模。这利用投影模是某个自由模的直和分量即可。
+
+## 诱导函子
+
+设F是定义在环R上的模到该范畴自身的一个可加函子，其将任意的正合序列$0 \to A \to B \to C \to 0 $映射到仅在一端正合的序列$FA \to F B \to FC \to 0$。左诱导函子(left-derived functors)描述了上述序列左端的核。
+
+设A为R模，给定一个像上面那样的右正合函子F，令$P: ... \to P_i \xrightarrow{\phi_i} P_{i-1}...\to P_1 \xrightarrow{\phi_1}P_0$为A的一个投影分解，定义F的第i阶左诱导函子$L_iF$为$L_iF(A) = H_iFP$，其中$FP$为F作用于P。注意到每个A都至少有一个自由分解，从而$L_iF$总是有定义的。此外，由于任意两个投影分解都是同伦的，可加函子作用于其上在任意处的同调都是同构的，从而$L_iF$作用在一个对象上的像和对象本身选取的投影分解无关。给定两个模$A, B$和同态$\phi: A \to B$，则$L_iF(\phi)$就是$\phi$诱导的任意两个A和B的投射分解之间的映射。固定了投射分解，所有的诱导映射都是同伦的，从而在$L_iF(A)$和$L_iF(B)$上诱导相同的映射。
+
+如果A本身就是一个投影模，则投影分解可以选取为$... 0 \to 0 \to A$，从而除了$H_0$，对于所有的$i \ge 0$，$L_iF(A) = 0$。
+
+对于这样的投影分解，$H_0(FP) = \coker F(\phi_1)$，F保持协核意味着$\coker F(\phi_1) = F(\coker \phi_1) = F(A)$。
+
+对于任意的模的短正合序列$0 \to A \xrightarrow{u} B \xrightarrow{v} C \to 0$，都存在长正合序列：
+$$
+... \to L_{i+1}F(A) \xrightarrow{L_{i+1}F u}L_{i+1}F(B) \xrightarrow{L_{i+1}F v}L_{i+1}F(C) \xrightarrow{\delta_{i+1}}L_iF(A) \xrightarrow{L_iF u} L_iF(B) \to ...
+$$
+尽管$F(A),F(B),F(C)$之间不再存在正合的关系，但是$0 \to P^A_i \to P_i^B \to P_i^C \to 0$的正合性(及A，B，C各自投射分解的第i项之间存在的正合关系)意味着$P_i^B = P_i^A \oplus P_i^C$，而可加函子是保持直和的，所以$F(P_i^A), F(P_i^B), F(P_i^C)$之间仍然存在正合关系。故可以使用前面的连接同态。
+
+最后事实上这样定义的连接同态$\delta$是“自然”的：给定两个相互关联的短正合序列
+$$
+\begin{CD}
+0 @>>> A @>u>> B @>v>> C @>>> 0 \\
+@. @V{\alpha}VV @V{\beta}VV @V{\gamma}VV \\
+0 @>>> A' @>u'>> B' @>v'>> C' @>>> 0
+\end{CD}
+$$
+上下两个序列所诱导的长诱导函子正合序列之间除去$\delta$的那些映射都存在交换关系，即：
+$$
+\begin {CD}
+L_iF(A) @>L_iF u>> L_iF(B) \\
+@VL_iF \alpha VV @V L_iF \beta VV \\
+L_iF(A') @>L_iFu'>> L_iF(B') 
+\end{CD}
+
+\begin {CD}
+L_iF(B) @>L_iF v>> L_iF(C) \\
+@VL_iF \beta VV @V L_iF \gamma VV \\
+L_iF(B') @>L_iFv'>> L_iF(C') 
+\end{CD}
+$$
+实际上$\delta$也具有类似的性质。
+$$
+\begin{CD}
+L_{i+1}F(C) @>\delta_{i+1}>> L_iF(A) \\
+@V L_{i+1}F \gamma VV @VL_i F \alpha VV \\
+L_{i+1}F(C') @>\delta'>> L_iF(A')
+\end{CD}
+$$
+
+__The big picture__
+
+![](../fig/left_derived_functor_overview.png)
+
+__第一幅图__给出了原始模之间的映射关系以及正合序列。按照图中指定的xy正方向，以A为原点，并假设所有线段长度均为1，参照图中的记号可以定义将xoy平面上的位置映射到字母的映射$\chi$，使得
+$$
+\chi(p) = 
+\begin{cases}
+A & p = (0,0) \\
+B & p = (1, 0) \\
+C & p = (2, 0) \\
+A' & p = (0, 1) \\ 
+B' & p = (1, 1) \\
+C' & p = (2, 1)
+\end{cases}
+$$
+对于那些方向为(0, 1)的箭头，若起点为$q$，则箭头的记号就是$\phi^{\chi(q)}$，再定义依照起点y坐标给(1, 0)方向箭头赋予记号的函数$\xi$使得
+$$
+\xi(y) = 
+\begin{cases}
+\alpha & y = 0\\
+\beta & y = 1 \\
+\gamma &y = 2
+\end{cases}
+$$
+__第二幅图__是原始的那些模给出投影分解同时用原先存在的映射关系诱导投射分解之间的映射。仍然假设所有线段长度为1。图中所有y坐标为-1或者3或者z=-1的点都表示0模。其余的坐标为$(x, y, z)$都记作$P^{\chi(x, y)}_z$，当x，y固定而z取遍所有自然数时$\{P^{\chi(x, y)}_z\}$就构成了$\chi(x, y)$的投射分解。将起点为$(x, y, z) $方向为$(-1, 0, 0)$的箭头记为$\eta_z^{\chi(x,y)} \ (z \ge 0)$，表示在$\chi(x,y)$的投射分解中$P_z^{\chi(x,y)}\to P_{z-1}^{\chi(x,y)}$的映射。记该单形为$P^{\chi(x,y)}$。注意对于使得$\chi$有定义的(x, y)，$\chi(x, y) = \coker \eta^{\chi(x, y)}_0$。
+
+对于其它方向的箭头，固定箭头方向和起始点和终止点的xy坐标$(x, y), (p, q)$，将起始点与终止点的z坐标取遍所有自然数，得到的一系列箭头实际上就是第一幅图中$\chi(x, y)\to \chi(p, q)$的映射诱导的$P^{\chi(x, y)}\to P^{\chi(p, q)}$的单形之间的同态。如果箭头的方向为$(0, 1, 0)$，则箭头记为$\phi^{\chi(x, y)}_z$，(x,y,z)为起始点的坐标；如果箭头方向为(1, 0, 0)，则箭头的记号为$\xi(y)_z$。
+
+__第三幅图__是第二张图作用了F之后的表示，由于F只是右正合的，去掉了一些从0发出的箭头。所有记号前面都加了一个F，角标和上标的记号与第二幅图相同。注意此时$\ker F\eta_z^{\chi(x,y) } \ne \img F\eta_{z-1}^{\chi(x,y)} $。
+
+__第四幅图__中的点是第三张图中取同调得到的结果。除了连接同态，其余的同调之间的同态均通过第三幅图中单形之间的同态来诱导。这些箭头的记号角标和上标的规定与2相同，只不过角标被移动到了L处。从$L_iFC \to L_{i-1}FA$的连接同态记为$\delta_i$，从$L_iFC' \to L_{i-1}FA'$的连接同态记为$\delta'$
+
+接下来考察在第四幅图中存在的3个交换表格：
+$$
+\begin{CD}
+L_iF(A) @>L_iF \phi^A>> L_iF(B) \\
+@VL_iF \alpha VV @V L_iF \beta VV \\
+L_iF(A') @>L_iF\phi^{A'}>> L_iF(B') 
+\end{CD}
+\begin{CD}
+L_iF(B) @>L_iF \phi^B>> L_iF(C) \\
+@VL_iF \beta VV @V L_iF \gamma VV \\
+L_iF(B') @>L_iF\phi^{B'}>> L_iF(C') 
+\end{CD}
+\begin{CD}
+L_{i}F(C) @>\delta_{i}>> L_{i-1}F(A) \\
+@V L_{i}F \gamma VV @VL_{i-1} F \alpha VV \\
+L_{i}F(C') @>\delta'>> L_{i-1}F(A')
+\end{CD}
+$$
+对于第一个表格中的可交换性，注意到$\beta \phi^A = \phi^{A'} \alpha$，从而单形的同态复合$P^A \to P^B \to P^{B'}$和$P^A \to P^{A'} \to P^{B'}$是同伦的，它们在同调上诱导相同的映射。第二个表格的交换性可以类似得到。
+
+关于$\delta$的交换性。给定$c = c_0 + \img F\eta_{n+1}^C \in L_{i}FC $，
+$$
+\begin{align}
+F\gamma_n(c) &= F\gamma_n(c_0) + F\gamma_n(\img F\eta^C_{n+1})\\
+&=F\gamma_n(c_0) + \img (F\gamma_n \circ F\eta_{n+1}^C) \\
+&= F\gamma_n(c_0) + \img (F\eta^{C'}_{n+1}\circ F\gamma_{n+1})\\
+&\sub F\gamma_n(c_0) + \img F\eta_{n+1}^{C'} \in L_iF(C')
+\end{align}
+$$
+从而$L_iF\gamma(c) = F\gamma_n(c_0) + \img F\eta_{n+1}^{C'}$。记$c_0' = F\gamma_n(c_0)$
+
+而$\delta(c) = {F\phi_{n-1}^A}^{-1} \circ F\eta_n^B \circ {F\phi_n^B}^{-1}(c_0 + \img F\eta^C_{n+1})$，$\delta(c')$类似，一步一步作用外侧的映射得到：
+$$
+{F\phi_n^B}^{-1}(c_0 + \img F\eta^C_{n+1}) = b_0 + \img F\eta_{n+1}^B + \img F\phi_n^A\\
+{F\phi_n^{B'}}^{-1}(c_0' + \img F\eta^{C'}_{n+1}) = b_0' + \img F\eta_{n+1}^{B'} + \img F\phi_n^{A'}\\
+$$
+其中$F\phi_n^B(b_0) = c_0, F\phi_n^{B'}(b_0') = c_0'$。故$F\gamma_n \circ F\phi_n^B(b_0) = F\phi_n^{B'} \circ F\beta_n(b_0) = F\phi_n^{B'}(b_0')$。从而$F\beta_n(b_0) \in b_0'+\img F\phi_n^{A'}$。
+$$
+F\eta_n^B \circ {F\phi_n^B}^{-1}(c) = b_1 + F\phi_{n-1}^A(\img F\eta_n^A) \\
+F\eta_n^{B'} \circ {F\phi_n^{B'}}^{-1}(c') = b_1' + F\phi_{n-1}^{A'}(\img F\eta_n^{A'})
+$$
+其中$b_1 = F\eta_n^B(b_0), b_1' = F\eta_n^{B'}(b_0')$，从而
+$$
+F\beta_{n-1}(b_1) = F\beta_{n-1}\circ F\eta_n^B(b_0) = F\eta_n^{B'}\circ F\beta_n(b_0) \in F\eta_n^{B'}(b_0' + \img F\phi_n^{A'}) = b_1'+\img F\phi_{n-1}^{A'} \circ F\eta_n^{A'}
+$$
+最后
+$$
+{F\phi_{n-1}^A}^{-1} \circ F\eta_n^B \circ {F\phi_n^B}^{-1}(c) = a_0 + \img F\eta_n^A \\
+{F\phi_{n-1}^{A'}}^{-1} \circ F\eta_n^{B'} \circ {F\phi_n^{B'}}^{-1}(c') = a_0' + \img F\eta_n^{A'}
+$$
+其中$F\phi_{n-1}^A(a_0) = b_1, F\phi_{n-1}^{A'}(a_0') = b_1'$
+
+注意到
+$$
+F\phi_{n-1}^{A'}\circ F \alpha_{n-1}(a_0) = F\beta_{n-1}\circ F\phi_{n-1}^{A}(a_0) = F\beta_{n-1}(b_1) \in b_1' + F\phi_{n-1}^{A'}(\img F\eta_n^{A'}) = F\phi_{n-1}^{A'}(a_0' + \img F\eta_n^{A'})
+$$
+从而$F\alpha_{n-1}(a_0)\in a_0' + \img F\eta_n^{A'}$
 
