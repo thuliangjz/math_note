@@ -175,7 +175,7 @@ ff_1 \otimes m_1 - ff_2 \otimes m_2 &= \sum r'_i \\
 &ab'(fg \otimes m') - a'b'(fg' \otimes m')
 \end{align}
 $$
-任然是0。换言之，乘以f可以和只利用张量积性质的恒等变形交换。恒等变形左侧的所有元乘以f等于右侧的所有元乘以f。为此需要定义好恒等变形的“原子步骤”。
+任然是0。换言之，乘以f可以和只利用张量积性质的恒等变形交换。恒等变形左侧的所有元乘以f等于右侧的所有元乘以f。为此需要定义好恒等变形的“原子步骤”。（__借助映射性质进行证明的方法参看__`tensor_product.md`）
 
 张量积可以将两个代数的性质联系起来：如果A和B都是R上的代数，则$A \otimes B$ 不仅是一个模，还是一个代数：$(a_1 \otimes b_1 ) (a_2 \otimes b_2) = a_1 a_2 \otimes b_1 b_2$ ，利用张量积的万有性质，如果$\alpha, \beta$是A和B到某个代数C的同态，则$\alpha \beta$实现了$A \times B$ 到C上的双线性映射，从而存在从$A \otimes B$ 到C的模同态，将$a \otimes b$ 映射到$\alpha(a) \beta(b)$ ，考虑到$A \otimes B$的环结构，这实际上也是一个代数同态。如果将$k[x] \otimes_k k[x]$ 看做一个代数，则其同构于$k[x, y]$
 
