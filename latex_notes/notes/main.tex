@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{ctex}
 \usepackage{sectsty}
+\usepackage{graphicx}
 \chapternumberfont{\tiny}
 % for theorem definition, one could use \begin{theorem} \end{theorem} and so on
 \newtheorem {theorem} {Theorem} [section]
@@ -19,15 +20,68 @@
 中文中文
 
 \chapter{Neukrich: Algebraic Number Theory}
-\section{Dedekind Domain上的理想分解}
+\section{整扩张}
+给定可分域扩张L|K的一组基底$\alpha_1, \alpha_2, \cdots, \alpha_n$，其判别式定义为
+$$
+d(\alpha_1, \cdots, \alpha_n) = \det((\sigma_i \alpha_j))^2
+$$
+其中$\sigma_i$取遍$L\to \bar{K}$的K-嵌入(i.e.$L$到K的代数闭包的所有固定$K$的同构)。对于形如$1, \theta, \cdots, \theta^{n-1}$这样的基底，其判别式为
+
+\centerline{\scalebox{0.7}{$
+\begin{aligned}
+    d(1, \theta, \cdots, \theta^{n-1}) 
+    &= \det \left(\begin{bmatrix}
+        1 & \theta_1 & \theta_1^2 & \cdots & \theta_1^{n-1} \\
+        1 & \theta_2 & \theta_2^2 & \cdots & \theta_2^{n-1} \\
+        \cdots & \cdots & \cdots & \cdots &\cdots \\
+        1 & \theta_n & \theta_n^2 & \cdots & \theta_n^{n-1}
+    \end{bmatrix} \right)^2 \\
+    &= \det \left(\begin{bmatrix}
+        1 & \theta_1 & \theta_1^2 & \cdots & \theta_1^{n-1} \\
+        0 & \theta_2 - \theta_1 & (\theta_2-\theta_1)(\theta_2 + \theta_1) & \cdots & (\theta_2-\theta_1)(\theta_2^{n-2}+\theta_2^{n-3}\theta_1+\cdots+\theta_1^{n-2}) \\
+        \cdots & \cdots & \cdots & \cdots &\cdots \\
+        0 & \theta_n - \theta_1 & (\theta_n-\theta_1)(\theta_n + \theta_1) & \cdots & (\theta_n-\theta_1)(\theta_n^{n-2}+\theta_n^{n-3}\theta_1+\cdots+\theta_1^{n-2})
+    \end{bmatrix} \right)^2 \\
+    &= \left(\prod_{i=2}^n (\theta_i - \theta_1)^2 \right) \det \left(\begin{bmatrix}
+            1 & \theta_2+\theta_1 & \cdots & \theta_2^{n-2}+\theta_2^{n-3}\theta_1+\cdots+\theta_1^{n-2} \\
+            \cdots & \cdots & \cdots &\cdots \\
+            1 & \theta_n + \theta_1 & \cdots & \theta_n^{n-2}+\theta_n^{n-3}\theta_1+\cdots+\theta_1^{n-2}
+        \end{bmatrix}\right)^2
+\end{aligned}
+$}}
+\noindent 将最后一个式子的第一列乘以$\theta_1,\cdots\theta_1^{n-2}$并减到第2到$n-1$列，消掉所有$\theta_1^i$项，然后用第二列消掉$\theta_j\theta_1^i$次项，以此类推，实际上有
+
+\centerline{\scalebox{0.7}{
+    $\det \left(\begin{bmatrix}
+            1 & \theta_2+\theta_1 & \cdots & \theta_2^{n-2}+\theta_2^{n-3}\theta_1+\cdots+\theta_1^{n-2} \\
+            \cdots & \cdots & \cdots &\cdots \\
+            1 & \theta_n + \theta_1 & \cdots & \theta_n^{n-2}+\theta_n^{n-3}\theta_1+\cdots+\theta_1^{n-2}
+        \end{bmatrix}\right) = \det \left(\begin{bmatrix}
+            1 & \theta_2 & \cdots & \theta_2^{n-2} \\
+            \cdots & \cdots & \cdots &\cdots \\
+            1 & \theta_n & \cdots & \theta_n^{n-2}
+        \end{bmatrix}\right)
+$}}
+\noindent 进而可以通过第推得到
+$$
+d(1, \theta, \cdots, \theta^{n-1}) = \prod_{i<j}(\theta_i - \theta_j)^2
+$$
 
 \section{Extensions of Dedekind Domains}
-以下的讨论中均假设$\idealo$为Dedekind domain，$K$为其分数域, $L|K$为有限代数扩张，$\idealO$为$L$中的$\idealo$的整闭包,则$\idealO$仍然是一个Dedekind domain (proof required)
+以下的讨论中均假设$\idealo$为Dedekind domain，$K$为其分数域, $L|K$为有限代数扩张，$\idealO$为$L$中的$\idealo$的整闭包,则$\idealO$仍然是一个Dedekind domain (proof required)。考虑环$\idealo$上的素理想$p$, 其在$\idealO$中被分解为一系列素理想的乘积$p\idealO=\mathcal{P}_1^{e_1}\mathcal{P}_2^{e_2}...\mathcal{P}_r^{e_r}$,其中$e_i$被称为$\mathcal{P}$关于$p$的\textbf{指数(index)}，而扩张的度数$f_i = [\idealO/\mathcal{P}_i:\idealo/p]$称为$\mathcal{P}_i$关于$p$的\textbf{度数(degree)}
 
-如果$L|K$为一个可分域扩张
+如果$L|K$为一个可分域扩张，则有下述定理
+\begin{theorem}
+    \label{neu:th:fundamental_identity}
+    $$
+    \sum_{i=1}^r e_i f_i = n
+    $$
+    其中$n=[L:K]$
+\end{theorem}
+
 \section{Cyclotomic Fields}
 
-设$\zeta$为一个$n$次单位根, 如果$n = \ell^v$并且$\ell$为素数, 令$\lambda = 1 - \zeta$, 则主理想$(\lambda)$是$\Q(\zeta)$的代数整数环中的素理想，该素理想的度为1(\textbf{什么意思?})并且
+设$\zeta$为一个$n$次单位根, 如果$n = \ell^v$并且$\ell$为素数, 令$\lambda = 1 - \zeta$, 则主理想$(\lambda)$是$\Q(\zeta)$的代数整数环中的素理想，该素理想的度为1(参看\ref{neu:th:fundamental_identity})并且
 $$
 \ell \idealo = (\lambda)^d, \text{其中}d = \phi(\ell^v) = [\Q(\zeta):\Q]
 $$
