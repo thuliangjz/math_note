@@ -1,0 +1,3 @@
+name: watchdog
+dependencies:
+  - watchdog

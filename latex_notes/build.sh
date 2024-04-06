@@ -1,0 +1,1 @@
+docker build --add-host=host.docker.internal:host-gateway  --tag math .

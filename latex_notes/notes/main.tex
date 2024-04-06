@@ -1,0 +1,74 @@
+% !TEX program = xelatex
+\documentclass[a4paper, 10pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage{sectsty}
+\chapternumberfont{\tiny}
+% for theorem definition, one could use \begin{theorem} \end{theorem} and so on
+\newtheorem {theorem} {Theorem} [section]
+\newtheorem {proof} {Proof} [section]
+% abbr definition
+\newcommand {\Q}{\mathbb{Q}}
+\newcommand {\Z}{\mathbb{Z}}
+\newcommand {\idealO}{\mathcal{O}}
+\newcommand {\idealo}{\text{\scriptsize{$\mathcal{O}$}}}
+
+\begin{document}
+\chapter{基础代数内容}
+中文中文
+
+\chapter{Neukrich: Algebraic Number Theory}
+\section{Dedekind Domain上的理想分解}
+
+\section{Extensions of Dedekind Domains}
+以下的讨论中均假设$\idealo$为Dedekind domain，$K$为其分数域, $L|K$为有限代数扩张，$\idealO$为$L$中的$\idealo$的整闭包,则$\idealO$仍然是一个Dedekind domain (proof required)
+
+如果$L|K$为一个可分域扩张
+\section{Cyclotomic Fields}
+
+设$\zeta$为一个$n$次单位根, 如果$n = \ell^v$并且$\ell$为素数, 令$\lambda = 1 - \zeta$, 则主理想$(\lambda)$是$\Q(\zeta)$的代数整数环中的素理想，该素理想的度为1(\textbf{什么意思?})并且
+$$
+\ell \idealo = (\lambda)^d, \text{其中}d = \phi(\ell^v) = [\Q(\zeta):\Q]
+$$
+此外, $1, \zeta, \cdots, \zeta^{d-1}$构成扩张$\Q(\zeta)|\Q$的一组基底, 其判别式为
+$$
+d(1, \zeta, \cdots, \zeta^{d-1}) = \pm\ell^s, \text{其中}s = \ell^{v-1}(v\ell - v - 1)
+$$
+\textbf{证明}
+
+$\zeta$的极小多项式的根由所有形如$\zeta^g, g \in \Z / (n\Z)^*$的单位根构成(只要注意$\Q(\zeta)|\Q$的固定$\Q$的自同构群将$\zeta$映射到某个能生成所有$n$次单位根的单位根，即某个$\zeta^g$)，而
+$$
+\Z / (n\Z) - \Z / (n\Z)^* = \{0, \ell, 2\ell, 3\ell, \cdots,  (\ell^{v-1} - 1)\ell\}
+$$
+$\{\zeta^h|h \in \Z / (n\Z) - \Z / (n\Z)^*\}$构成了$x^{\ell^{v-1}} -1 = 0$的所有根，于是$\zeta$的极小多项式也可以写成
+$$
+\begin{aligned}
+    p(\zeta) 
+        &= \prod_{g\in \Z/(n\Z)*}(x - \zeta^g) \\
+        &= \frac{\prod_{k\in\Z/(n\Z)} (x-\zeta^k)}{\prod_{h\in \Z/(n\Z) - \Z / (n\Z)^*}{(x-\zeta^h)}} \\
+        &= \frac{x^{\ell^v} - 1}{x^{\ell^{v-1}}-1} \\
+        &= 1 + x^{\ell^{v-1}} + x^{2\ell^{v-1}} + x^{3\ell^{v-1}} + \cdots + x^{(\ell-1)\ell^{v-1}}
+\end{aligned}
+$$
+上式中取$x=1$得到
+$$
+\prod_{g\in \Z/(n\Z)^*}(1-\zeta^g)=\ell
+$$
+然而$\forall g \in \Z / (n\Z)^*$，若令$g'$是$g$的逆（即$gg'=1$）则
+$$
+\frac{1-\zeta}{1-\zeta^g} = \frac{1-{\zeta^{g}}^{g'}}{1-\zeta^g} = 1+\zeta^g + \zeta^{2g}+ \cdots +\zeta^{(g'-1)g}
+$$
+反过来
+$$
+\frac{1-\zeta^g}{1-\zeta} = 1+\zeta + \zeta^2+ \cdots+\zeta^{g-1}
+$$
+说明$1-\zeta$和$1-\zeta^g$在其中只相差了一个可逆元,于是$\ell = \epsilon(1-\zeta)^{\phi(l^v)}$, 其中$\epsilon$是一个可逆元,进而$l\idealo = (\lambda)^{\phi(\ell^v)}$
+
+\section{Another section}
+\begin{equation}
+    \label{example:hello}
+    E = m c^2 \times 2
+\end{equation}
+参看公式\ref{example:hello}
+\end{document}
