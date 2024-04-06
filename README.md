@@ -60,3 +60,21 @@ MarkDown写起来很方便，但是对于公式的支持到今天仍然没有非
 ### Latex配置
 
 Latex通过docker进行配置，尽量做到一次编写完成后可以在其他平台一键部署。latex的编写环境使用的是nvim+vimtex，pdf viewer用的是zathura，它能够依据synctex文件进行跳转。不过由于在docker里面集成GUI和dbus是比较困难的事情，暂时采用的workaround是在nvim里面配置一个将当前光标的位置和文件名输出到一个目录下的文件中，然后在外部用python的watchdog检查该文件，一旦发生变化就通知zathura，watchdog可以用conda来进行环境创建
+
+配置步骤如下:
+
++ 基本软件安装
+
+   + docker：可能需要配置daemon使用代理，参看https://docs.docker.com/config/daemon/#configure-the-docker-daemon
+
+   + zathura：这个安装在host上，ubuntu：`sudo apt install zathura`
+
+   + conda
+
++ 执行build.sh
+
++ 在watchdog目录下，执行`conda env create -f environment.yml`，完成之后执行`python zathura_watchdog.py ../notes/synctex_forward ../notes/main.pdf`
+
++ 执行start.sh进入容器后执行`cd notes; nvim main.tex`
+
++ nvim中执行`<leader>lv`来生成当前光标所在的文件,watchdog会自动跳转(当然需要先执行`VimtexCompile`来构建对应的pdf)
